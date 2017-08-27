@@ -1,0 +1,7 @@
+{% extends "layout.html" %}
+{% block body %}
+  <h1>Welcome {% if session.logged_in %} {{session.username}} {% endif %}</h1>
+  {% if session.logged_in %}
+    <a href="{{ url_for('quiz')}}">Start Quiz</a>
+  {% endif %}
+{% endblock %}

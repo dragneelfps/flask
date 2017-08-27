@@ -1,0 +1,5 @@
+{% extends "layout.html" %}
+{% block body %}
+  <h1>Your score is {{score}}</h1>
+  <a href="{{ url_for('quiz')}}">Try again?</a>
+{% endblock %}

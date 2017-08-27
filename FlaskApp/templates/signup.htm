@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Python Flask Bucket List App</title>
+      <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script>
+        $(function(){
+          $('#btnSignUp').click(function() {
+            console.log('Hey');
+            $.ajax({
+              url: 'signUp',
+              data: $('form').serialize(),
+              type: 'POST',
+              success: function(response) {
+                console.log(response)
+              },
+              error: function(error){
+                console.log(error)
+              }
+            });
+          });
+        });
+      </script>
+  </head>
+  <body>
+
+    <div class="container">
+      <div class="container-">
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <h1 class="navbar-brand text-muted">Python Flask App</h1>
+            </div>
+            <ul class="nav nav-pills justify-content-end">
+              <li class="nav-item"><a href="main" class="nav-link">Home</a></li>
+              <li class="nav-item"><a href="#" class="nav-link">Sign In</a></li>
+              <li class="nav-item"><a href="#" class="nav-link active"></a></li>
+            </ul>
+          </div>
+        </nav>
+        <div class="jumbotron">
+          <h1>Bucket List App</h1>
+          <form action="" class="form-signin">
+            <label for="inputName" class="sr-only">Name</label>
+            <input type="name" name="inputName" id="inputName" class="form-control" placeholder="Name" required autofocus>
+            <label for="inputEmail" class="sr-only"></label>
+            <input type="email" name="inputEmail" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
+            <label for="inputPassword" class="sr-only"></label>
+            <input type="password" name="inputPassword" id="inputPassword" class="form-control" placeholder="Password" required>
+            <button class="btn btn-lg btn-primary btn-block" type="button" id="btnSignUp">Sign Up</button>
+          </form>
+        </div>
+        <footer class="footer">
+          <p>&copy; Company 2017</p>
+        </footer>
+      </div>
+
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,3 @@
+graft kbc/templates
+graft kbc/static
+include kbc/schema.sql

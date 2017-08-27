@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block body %}
+  <ul class="quiz">
+
+    <form class="quiz-questions" action="{{ url_for('result')}}" method="post">
+      {% for question in questions %}
+
+
+      <li><h3>{{question.question}}</h3></li>
+      <fieldset>
+        <input type="radio" name='{{loop.index0}}' value="1"> {{question.op1}} {{loop.index0}}<br />
+        <input type="radio" name='{{loop.index0}}' value="2"> {{question.op2}} <br />
+        <input type="radio" name='{{loop.index0}}' value="3"> {{question.op3}} <br />
+        <input type="radio" name='{{loop.index0}}' value="4"> {{question.op4}} <br />
+      </fieldset>
+
+      {% endfor %}
+      <input type="submit" name="" value="Next">
+    </form>
+
+
+  </ul>
+{% endblock %}

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<title>KBC-Challenge</title>
+<link rel="stylesheet" href="{{ url_for('static',filename='style.css')}}">
+<div class="page">
+  <h1>KBC-Challenge</h1>
+  {% if not session.logged_in %}
+    <a href="{{ url_for('login')}}">Log in</a>
+    <a href="{{ url_for('signup')}}">Sign Up</a>
+  {% else %}
+    <a href="{{ url_for('logout')}}">Log out</a>
+  {% endif %}
+  {% block body %}{% endblock %}
+</div>
